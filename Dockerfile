@@ -10,6 +10,7 @@ RUN wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add - && \
 
 RUN apt-get -y --no-install-recommends install \
   aptitude \
+  bash-completion \
   build-essential \
   clang-${LLVM_VERSION} \
   cmake \
