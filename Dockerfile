@@ -34,6 +34,8 @@ RUN apt-get -y --no-install-recommends install \
   python \
   python-dev \
   python-pip \
+  python-software-properties \
+  software-properties-common \
   subversion \
   tmux \
   tree \
