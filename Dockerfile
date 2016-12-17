@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 MAINTAINER Dan Liew <daniel.liew@imperial.ac.uk>
-ENV LLVM_VERSION=3.7
+ENV LLVM_VERSION=3.9
 ENV CONTAINER_USER="cxxdev"
 
 # Set Locale otherwise some applications may behave strangely when
