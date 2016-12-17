@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Dan Liew <daniel.liew@imperial.ac.uk>
 ENV LLVM_VERSION=3.9
 ENV CONTAINER_USER="cxxdev"
@@ -11,8 +11,8 @@ ENV LANG=en_GB.UTF-8 \
     LC_ALL=en_GB.UTF-8
 
 RUN apt-get update && apt-get -y upgrade && apt-get -y install wget
-RUN wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add - && \
-	echo "deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-${LLVM_VERSION} main" >> /etc/apt/sources.list.d/llvm.list && \
+RUN wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|apt-key add - && \
+	echo "deb http://llvm.org/apt/xenial/ llvm-toolchain-xenial-${LLVM_VERSION} main" >> /etc/apt/sources.list.d/llvm.list && \
 	apt-get update
 
 RUN apt-get -y --no-install-recommends install \
@@ -37,6 +37,7 @@ RUN apt-get -y --no-install-recommends install \
   python-software-properties \
   software-properties-common \
   subversion \
+  sudo \
   tmux \
   tree \
   unzip \
